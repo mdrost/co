@@ -1,0 +1,53 @@
+@PACKAGE_INIT@
+
+# The library kind is chosen by CO_SHARED_LIBS (like when building co), otherwise the kind preferred by
+# BUILD_SHARED_LIBS (shared if it is not defined) or the other one if only that one is installed.
+if(DEFINED CO_SHARED_LIBS)
+	if(CO_SHARED_LIBS)
+		set(_co_kinds "shared")
+	else()
+		set(_co_kinds "static")
+	endif()
+elseif(DEFINED BUILD_SHARED_LIBS AND NOT BUILD_SHARED_LIBS)
+	set(_co_kinds "static" "shared")
+else()
+	set(_co_kinds "shared" "static")
+endif()
+
+set(_co_kind "")
+foreach(_co_candidate IN LISTS _co_kinds)
+	if(EXISTS "${CMAKE_CURRENT_LIST_DIR}/@CO_CMAKE_PACKAGE_NAME@-${_co_candidate}-targets.cmake")
+		set(_co_kind "${_co_candidate}")
+		break()
+	endif()
+endforeach()
+
+if(NOT _co_kind)
+	list(JOIN _co_kinds " or " _co_kinds)
+	set(${CMAKE_FIND_PACKAGE_NAME}_NOT_FOUND_MESSAGE "The ${_co_kinds} library is not installed.")
+	set(${CMAKE_FIND_PACKAGE_NAME}_FOUND FALSE)
+	unset(_co_candidate)
+	unset(_co_kinds)
+	unset(_co_kind)
+	return()
+endif()
+
+include("${CMAKE_CURRENT_LIST_DIR}/@CO_CMAKE_PACKAGE_NAME@-${_co_kind}-targets.cmake")
+
+# Components are the modules, each with its own targets file per kind: win32 gives @CO_CMAKE_PACKAGE_NAME@::win32.
+foreach(_co_component IN LISTS ${CMAKE_FIND_PACKAGE_NAME}_FIND_COMPONENTS)
+	set(_co_targets_file "${CMAKE_CURRENT_LIST_DIR}/@CO_CMAKE_PACKAGE_NAME@-${_co_component}-${_co_kind}-targets.cmake")
+	if(EXISTS "${_co_targets_file}")
+		include("${_co_targets_file}")
+		set(${CMAKE_FIND_PACKAGE_NAME}_${_co_component}_FOUND TRUE)
+	else()
+		set(${CMAKE_FIND_PACKAGE_NAME}_${_co_component}_FOUND FALSE)
+	endif()
+endforeach()
+unset(_co_targets_file)
+unset(_co_component)
+unset(_co_candidate)
+unset(_co_kinds)
+unset(_co_kind)
+
+check_required_components(@CO_CMAKE_PACKAGE_NAME@)

@@ -1,0 +1,29 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "Docs: Build",
+      "appliesTo": "docs/",
+      "type": "launch",
+      "command": "${workspaceRoot}\\.venv\\Scripts\\sphinx-build.exe",
+      "args": [ "-b", "html", "docs", "docs/_build/html" ],
+      "workingDirectory": "${workspaceRoot}"
+    },
+    {
+      "taskLabel": "Docs: Rebuild",
+      "appliesTo": "docs/",
+      "type": "launch",
+      "command": "${workspaceRoot}\\.venv\\Scripts\\sphinx-build.exe",
+      "args": [ "-E", "-a", "-b", "html", "docs", "docs/_build/html" ],
+      "workingDirectory": "${workspaceRoot}"
+    },
+    {
+      "taskLabel": "Docs: Open in browser",
+      "appliesTo": "docs/",
+      "type": "launch",
+      "command": "powershell.exe",
+      "args": [ "-NoProfile", "-Command", "Start-Process", "'${workspaceRoot}\\docs\\_build\\html\\index.html'" ],
+      "workingDirectory": "${workspaceRoot}"
+    }
+  ]
+}

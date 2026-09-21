@@ -1,0 +1,10 @@
+/* Signatures split one parameter per line (maximum_signature_line_length in conf.py) render the parameters as a nested
+   definition list; drop the spacing the theme gives to definition lists in content. */
+.rst-content dl dt.sig dl {
+    margin: 0;
+}
+
+.rst-content dl dt.sig dl dd {
+    margin: 0 0 0 24px;
+    line-height: inherit;
+}

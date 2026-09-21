@@ -1,0 +1,114 @@
+#pragma once
+
+#include <co.h>
+#include <co/win32/api.h>
+
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+#pragma region Handles
+
+typedef struct co_win32_message_pump_0_event_domain_group_factory_0_t co_win32_message_pump_0_event_domain_group_factory_0_t;
+typedef co_win32_message_pump_0_event_domain_group_factory_0_t* co_win32_message_pump_0_event_domain_group_factory_0;
+
+typedef struct co_win32_message_pump_0_event_domain_group_0_t co_win32_message_pump_0_event_domain_group_0_t;
+typedef co_win32_message_pump_0_event_domain_group_0_t* co_win32_message_pump_0_event_domain_group_0;
+
+typedef struct co_win32_message_pump_0_event_loop_0_t co_win32_message_pump_0_event_loop_0_t;
+typedef co_win32_message_pump_0_event_loop_0_t* co_win32_message_pump_0_event_loop_0;
+
+#pragma endregion
+
+#pragma region Event domain group factory
+
+#define CO_WIN32_MESSAGE_PUMP_0_EVENT_DOMAIN_GROUP_FACTORY_0_CAST(handle) ((co_win32_message_pump_0_event_domain_group_factory_0)(handle))
+
+/// @copydoc co_event_domain_group_factory_0_destroy()
+static inline void co_win32_message_pump_0_event_domain_group_factory_0_destroy(co_win32_message_pump_0_event_domain_group_factory_0 event_domain_group_factory) CO_NOEXCEPT
+{
+	co_event_domain_group_factory_0_destroy(CO_EVENT_DOMAIN_GROUP_FACTORY_0_CAST(event_domain_group_factory));
+}
+
+/// @copydoc co_event_domain_group_factory_0_get_member_create_info_structure_types_0()
+static inline void co_win32_message_pump_0_event_domain_group_factory_0_get_member_create_info_structure_types_0(co_win32_message_pump_0_event_domain_group_factory_0 event_domain_group_factory, const co_structure_type_0** member_create_info_structure_types, size_t* member_create_info_structure_type_count) CO_NOEXCEPT
+{
+	co_event_domain_group_factory_0_get_member_create_info_structure_types_0(CO_EVENT_DOMAIN_GROUP_FACTORY_0_CAST(event_domain_group_factory), member_create_info_structure_types, member_create_info_structure_type_count);
+}
+
+/// @copydoc co_event_domain_group_factory_0_get_handled_structure_types_0()
+static inline void co_win32_message_pump_0_event_domain_group_factory_0_get_handled_structure_types_0(co_win32_message_pump_0_event_domain_group_factory_0 event_domain_group_factory, const co_structure_type_0** handled_structure_types, size_t* handled_structure_type_count) CO_NOEXCEPT
+{
+	co_event_domain_group_factory_0_get_handled_structure_types_0(CO_EVENT_DOMAIN_GROUP_FACTORY_0_CAST(event_domain_group_factory), handled_structure_types, handled_structure_type_count);
+}
+
+/// @copydoc co_event_domain_group_factory_0_get_provided_service_types_0()
+static inline void co_win32_message_pump_0_event_domain_group_factory_0_get_provided_service_types_0(co_win32_message_pump_0_event_domain_group_factory_0 event_domain_group_factory, const co_service_type_0** provided_service_types, size_t* provided_service_type_count) CO_NOEXCEPT
+{
+	co_event_domain_group_factory_0_get_provided_service_types_0(CO_EVENT_DOMAIN_GROUP_FACTORY_0_CAST(event_domain_group_factory), provided_service_types, provided_service_type_count);
+}
+
+/// @copydoc co_event_domain_group_factory_0_get_member_count_range_0()
+static inline void co_win32_message_pump_0_event_domain_group_factory_0_get_member_count_range_0(co_win32_message_pump_0_event_domain_group_factory_0 event_domain_group_factory, size_t* min_count, size_t* max_count) CO_NOEXCEPT
+{
+	co_event_domain_group_factory_0_get_member_count_range_0(CO_EVENT_DOMAIN_GROUP_FACTORY_0_CAST(event_domain_group_factory), min_count, max_count);
+}
+
+/// @copydoc co_event_domain_group_factory_0_get_rank_0()
+static inline void co_win32_message_pump_0_event_domain_group_factory_0_get_rank_0(co_win32_message_pump_0_event_domain_group_factory_0 event_domain_group_factory, size_t* rank) CO_NOEXCEPT
+{
+	co_event_domain_group_factory_0_get_rank_0(CO_EVENT_DOMAIN_GROUP_FACTORY_0_CAST(event_domain_group_factory), rank);
+}
+
+/// @copydoc co_event_domain_group_factory_0_create_event_domain_group_0()
+static inline co_result_0 co_win32_message_pump_0_event_domain_group_factory_0_create_event_domain_group_0(co_win32_message_pump_0_event_domain_group_factory_0 event_domain_group_factory, const co_event_domain_group_0_create_info_0* create_info, co_event_domain_group_0* group) CO_NOEXCEPT
+{
+	return co_event_domain_group_factory_0_create_event_domain_group_0(CO_EVENT_DOMAIN_GROUP_FACTORY_0_CAST(event_domain_group_factory), create_info, group);
+}
+
+#pragma endregion
+
+#pragma region Event domain group
+
+#define CO_WIN32_MESSAGE_PUMP_0_EVENT_DOMAIN_GROUP_0_CAST(handle) ((co_win32_message_pump_0_event_domain_group_0)(handle))
+
+/// @copydoc co_event_domain_group_0_destroy()
+static inline void co_win32_message_pump_0_event_domain_group_0_destroy(co_win32_message_pump_0_event_domain_group_0 event_domain_group) CO_NOEXCEPT
+{
+	co_event_domain_group_0_destroy(CO_EVENT_DOMAIN_GROUP_0_CAST(event_domain_group));
+}
+
+/// @copydoc co_event_domain_group_0_get_event_domain_0()
+static inline void co_win32_message_pump_0_event_domain_group_0_get_event_domain_0(co_event_domain_group_0 event_domain_group, size_t domain_event_index, co_event_domain_0* event_domain_0) CO_NOEXCEPT
+{
+	co_event_domain_group_0_get_event_domain_0(CO_EVENT_DOMAIN_GROUP_0_CAST(event_domain_group), domain_event_index, event_domain_0);
+}
+
+#pragma endregion
+
+#pragma region Event loop
+
+#define CO_WIN32_MESSAGE_PUMP_0_EVENT_LOOP_0_CAST(handle) ((co_win32_message_pump_0_event_loop_0)(handle))
+
+/// @brief Structure type of co_win32_message_pump_0_event_loop_0_create_info_0.
+extern CO_WIN32_API
+const co_structure_type_0 CO_STRUCTURE_TYPE_0_WIN32_MESSAGE_PUMP_0_EVENT_LOOP_0_CREATE_INFO_0;
+
+typedef struct co_win32_message_pump_0_event_loop_0_create_info_0 CO_FINAL
+{
+	co_structure_type_0 structure_type;
+	const co_in_structure_0* next_structure;
+
+	/// @brief Services the event loop must provide; only these may be asked for with co_event_domain_0_get_service_0().
+	/// @pre Not NULL when required_service_count is not zero.
+	const co_service_type_0* required_services;
+	/// @brief Number of elements of required_services.
+	size_t required_service_count;
+} co_win32_message_pump_0_event_loop_0_create_info_0;
+
+#pragma endregion
+
+#ifdef __cplusplus
+}
+#endif
