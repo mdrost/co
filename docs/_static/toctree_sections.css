@@ -1,0 +1,30 @@
+/* Section headings inserted into the sidebar by the toctree_sections extension. */
+.wy-menu-vertical li.toctree-section {
+    padding: 0.809em 1.618em 0.2em;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #404040;
+    cursor: default;
+}
+
+.wy-menu-vertical li.toctree-section + li,
+.wy-menu-vertical li.toctree-section {
+    border-top: none;
+}
+
+.wy-menu-vertical li:not(:first-child).toctree-section {
+    border-top: 1px solid #b3b3b3;
+    margin-top: 0.4em;
+}
+
+.wy-menu-vertical li.toctree-section-l2 {
+    padding-left: 2.427em;
+}
+
+.wy-menu-vertical li.toctree-section-l3 {
+    padding-left: 4.045em;
+}
+
+.wy-menu-vertical li.toctree-section-l4 {
+    padding-left: 5.663em;
+}

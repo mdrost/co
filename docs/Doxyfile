@@ -1,0 +1,36 @@
+# Doxygen is only used to extract API documentation as XML for Breathe/Sphinx.
+# Paths are relative to this directory; conf.py runs doxygen from here.
+
+PROJECT_NAME           = co
+OUTPUT_DIRECTORY       = _doxygen
+
+INPUT                  = ../include
+RECURSIVE              = YES
+FILE_PATTERNS          = *.h *.hpp
+
+FULL_PATH_NAMES        = YES
+STRIP_FROM_PATH        = ../include
+STRIP_FROM_INC_PATH    = ../include
+
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = NO
+EXTRACT_STATIC         = NO
+
+# C structs are declared as "typedef struct X { ... } X;"; document them once, under the typedef name.
+TYPEDEF_HIDES_STRUCT   = YES
+
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = YES
+EXPAND_ONLY_PREDEF     = YES
+SEARCH_INCLUDES        = NO
+PREDEFINED             = CO_API= \
+						 CO_NOEXCEPT= \
+						 CO_FINAL=
+
+GENERATE_HTML          = NO
+GENERATE_LATEX         = NO
+GENERATE_XML           = YES
+XML_PROGRAMLISTING     = NO
+
+QUIET                  = YES
+WARN_IF_UNDOCUMENTED   = NO
